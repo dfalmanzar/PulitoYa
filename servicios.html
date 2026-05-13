@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pulito — Servicios</title>
+  <meta name="description" content="Conoce nuestros servicios: Casas, Apartamentos, Industrias y Comercio."/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+  <div class="glass-nav border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2" aria-label="Pulito - Inicio">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" stroke="#005fae" stroke-width="2"/>
+          <path d="M9 19c0-3.866 2.239-7 5-7s5 3.134 5 7" stroke="#005fae" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 12V8M14 8l-2 2M14 8l2 2" stroke="#5ea5ff" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="font-heading font-extrabold text-xl tracking-tight text-on-surface">Pulito</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 font-heading font-semibold text-sm">
+        <a href="servicios.html" class="text-primary">Servicios</a>
+        <a href="index.html#proceso" class="text-on-surface-variant hover:text-primary transition-colors">Proceso</a>
+        <a href="index.html#testimonios" class="text-on-surface-variant hover:text-primary transition-colors">Testimonios</a>
+        <a href="index.html#contacto" class="text-on-surface-variant hover:text-primary transition-colors">Contacto</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="index.html#contacto" class="px-6 py-2.5 bg-primary text-white rounded-full font-heading font-semibold text-sm editorial-shadow hover:bg-primary-dark transition-colors">
+          Cotización Gratis
+        </a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden" aria-label="Menú">
+        <span class="material-symbols-outlined text-on-surface">menu</span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="flex-col items-center gap-5 py-6 border-t border-white/20">
+      <a href="servicios.html" class="font-heading font-semibold text-primary" onclick="closeMobile()">Servicios</a>
+      <a href="index.html#proceso" class="font-heading font-semibold text-on-surface-variant hover:text-primary" onclick="closeMobile()">Proceso</a>
+      <a href="index.html#testimonios" class="font-heading font-semibold text-on-surface-variant hover:text-primary" onclick="closeMobile()">Testimonios</a>
+      <a href="index.html#contacto" class="font-heading font-semibold text-on-surface-variant hover:text-primary" onclick="closeMobile()">Contacto</a>
+      <a href="index.html#contacto" onclick="closeMobile()" class="px-8 py-3 bg-primary text-white rounded-full font-heading font-semibold text-sm">Cotización Gratis</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO / HEADER ══════════════ -->
+<header class="relative pt-20">
+  <div class="absolute inset-0 -z-10">
+    <div class="w-full h-full bg-gradient-to-br from-primary/8 via-surface to-blue-50/40"></div>
+    <div class="absolute top-24 right-0 w-[560px] h-[560px] bg-primary/6 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-200/20 rounded-full blur-[80px]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-heading font-bold tracking-widest uppercase">
+        <span class="material-symbols-outlined text-base">category</span>
+        Servicios
+      </div>
+
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-on-surface mt-5">
+        Información general por<br/>
+        <span class="gradient-text italic">tipo de servicio</span>
+      </h1>
+
+      <p class="text-lg text-on-surface-variant mt-5 max-w-2xl leading-relaxed">
+        Selecciona una pestaña para ver una descripción general. Mantenemos el estándar Pulito:
+        puntualidad, seguridad y acabados sin manchas.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-full font-heading font-bold text-sm border border-primary/20 hover:bg-primary/5 transition-colors">
+          <span class="material-symbols-outlined text-lg">arrow_back</span>
+          Volver al inicio
+        </a>
+        <a href="index.html#contacto" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-heading font-bold text-sm editorial-shadow hover:bg-primary-dark transition-colors">
+          <span class="material-symbols-outlined text-lg">call</span>
+          Pedir cotización
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ TABS ══════════════ -->
+<main class="section-pad bg-surface-low">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="glass-card editorial-shadow border border-white/30 rounded-[2rem] p-4 md:p-5">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Categorías</span>
+          <h2 class="font-heading font-extrabold text-2xl md:text-3xl tracking-tight text-on-surface mt-2">
+            Elige un servicio
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap gap-2 md:gap-3">
+          <button class="tab-btn px-5 py-2.5 rounded-full border border-outline-variant/60 bg-white/70 font-heading font-bold text-sm text-on-surface-variant hover:bg-white transition-colors"
+                  type="button" data-tab="casas" aria-selected="true">
+            Casas
+          </button>
+          <button class="tab-btn px-5 py-2.5 rounded-full border border-outline-variant/60 bg-white/70 font-heading font-bold text-sm text-on-surface-variant hover:bg-white transition-colors"
+                  type="button" data-tab="apartamentos" aria-selected="false">
+            Apartamentos
+          </button>
+          <button class="tab-btn px-5 py-2.5 rounded-full border border-outline-variant/60 bg-white/70 font-heading font-bold text-sm text-on-surface-variant hover:bg-white transition-colors"
+                  type="button" data-tab="industrias" aria-selected="false">
+            Industrias
+          </button>
+          <button class="tab-btn px-5 py-2.5 rounded-full border border-outline-variant/60 bg-white/70 font-heading font-bold text-sm text-on-surface-variant hover:bg-white transition-colors"
+                  type="button" data-tab="comercio" aria-selected="false">
+            Comercio
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
+
+      <section class="lg:col-span-3">
+        <article id="panel-casas" class="tab-panel glass-card editorial-shadow border border-white/30 rounded-[2rem] p-8 md:p-10">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-3xl">home</span>
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-on-surface">Casas</h3>
+              <p class="text-on-surface-variant mt-2 leading-relaxed">
+                Limpieza de cristales y ventanales en casas y residencias, cuidando marcos, cancelería y acabados.
+                Usamos técnicas seguras para interiores y exteriores, priorizando un secado impecable y sin manchas.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 grid sm:grid-cols-2 gap-4">
+            <div class="bg-white/70 rounded-2xl border border-outline-variant/30 p-5">
+              <div class="flex items-center gap-2 text-primary font-heading font-bold text-sm">
+                <span class="material-symbols-outlined filled text-lg">check_circle</span>
+                Ideal para
+              </div>
+              <p class="text-sm text-on-surface-variant mt-2">
+                Ventanas grandes, domos, canceles, balcones y áreas comunes dentro del hogar.
+              </p>
+            </div>
+            <div class="bg-white/70 rounded-2xl border border-outline-variant/30 p-5">
+              <div class="flex items-center gap-2 text-primary font-heading font-bold text-sm">
+                <span class="material-symbols-outlined filled text-lg">schedule</span>
+                Frecuencia sugerida
+              </div>
+              <p class="text-sm text-on-surface-variant mt-2">
+                Cada 4–8 semanas (depende de polvo, lluvia y ubicación).
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article id="panel-apartamentos" class="tab-panel hidden glass-card editorial-shadow border border-white/30 rounded-[2rem] p-8 md:p-10">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-3xl">apartment</span>
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-on-surface">Apartamentos</h3>
+              <p class="text-on-surface-variant mt-2 leading-relaxed">
+                Servicio pensado para departamentos: ventanales, balcones y cancelería con acceso controlado.
+                Coordinamos horarios y cuidamos áreas comunes para que el trabajo sea rápido, discreto y seguro.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 grid sm:grid-cols-2 gap-4">
+            <div class="bg-white/70 rounded-2xl border border-outline-variant/30 p-5">
+              <div class="flex items-center gap-2 text-primary font-heading font-bold text-sm">
+                <span class="material-symbols-outlined filled text-lg">shield</span>
+                Enfoque
+              </div>
+              <p class="text-sm text-on-surface-variant mt-2">
+                Protección de pisos/muebles y protocolos para administración/seguridad del edificio.
+              </p>
+            </div>
+            <div class="bg-white/70 rounded-2xl border border-outline-variant/30 p-5">
+              <div class="flex items-center gap-2 text-primary font-heading font-bold text-sm">
+                <span class="material-symbols-outlined filled text-lg">visibility</span>
+                Resultado
+              </div>
+              <p class="text-sm text-on-surface-variant mt-2">
+                Mejor iluminación natural y vista clara sin marcas en el cristal.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article id="panel-industrias" class="tab-panel hidden glass-card editorial-shadow border border-white/30 rounded-[2rem] p-8 md:p-10">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-3xl">factory</span>
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-on-surface">Industrias</h3>
+              <p class="text-on-surface-variant mt-2 leading-relaxed">
+                Limpieza de superficies acristaladas en entornos industriales: naves, plantas y áreas técnicas.
+                Priorizamos seguridad, señalización y trabajo por etapas para no interrumpir operaciones.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 grid sm:grid-cols-2 gap-4">
+            <div class="bg-white/70 rounded-2xl border border-outline-variant/30 p-5">
+              <div class="flex items-center gap-2 text-primary font-heading font-bold text-sm">
+                <span class="material-symbols-outlined filled text-lg">verified_user</span>
+                Seguridad
+              </div>
+              <p class="text-sm text-on-surface-variant mt-2">
+                Procedimientos de prevención, uso de equipo y coordinación con responsables del sitio.
+              </p>
+            </div>
+            <div class="bg-white/70 rounded-2xl border border-outline-variant/30 p-5">
+              <div class="flex items-center gap-2 text-primary font-heading font-bold text-sm">
+                <span class="material-symbols-outlined filled text-lg">settings</span>
+                Planeación
+              </div>
+              <p class="text-sm text-on-surface-variant mt-2">
+                Visita previa para estimar tiempos, accesos y nivel de suciedad.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article id="panel-comercio" class="tab-panel hidden glass-card editorial-shadow border border-white/30 rounded-[2rem] p-8 md:p-10">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-3xl">storefront</span>
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-on-surface">Comercio</h3>
+              <p class="text-on-surface-variant mt-2 leading-relaxed">
+                Para locales, oficinas y fachadas: limpieza de vitrinas, ventanales y cristales de acceso.
+                Programamos mantenimiento periódico para que tu negocio siempre se vea impecable.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 grid sm:grid-cols-2 gap-4">
+            <div class="bg-white/70 rounded-2xl border border-outline-variant/30 p-5">
+              <div class="flex items-center gap-2 text-primary font-heading font-bold text-sm">
+                <span class="material-symbols-outlined filled text-lg">repeat</span>
+                Mantenimiento
+              </div>
+              <p class="text-sm text-on-surface-variant mt-2">
+                Planes semanales/quincenales/mensuales según tráfico y exposición.
+              </p>
+            </div>
+            <div class="bg-white/70 rounded-2xl border border-outline-variant/30 p-5">
+              <div class="flex items-center gap-2 text-primary font-heading font-bold text-sm">
+                <span class="material-symbols-outlined filled text-lg">bolt</span>
+                Ejecución
+              </div>
+              <p class="text-sm text-on-surface-variant mt-2">
+                Trabajo ágil en horarios de menor afluencia para no afectar la operación.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="lg:col-span-2">
+        <div class="bg-white rounded-[2rem] editorial-shadow border border-outline-variant/20 p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary">info</span>
+            <h4 class="font-heading font-extrabold text-lg text-on-surface">¿Qué incluye?</h4>
+          </div>
+
+          <ul class="space-y-3 text-sm text-on-surface-variant">
+            <li class="flex gap-3">
+              <span class="material-symbols-outlined filled text-primary text-base mt-0.5">check_circle</span>
+              Limpieza de cristal (interior/exterior según acceso)
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-outlined filled text-primary text-base mt-0.5">check_circle</span>
+              Detalle general de marcos y rieles (según evaluación)
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-outlined filled text-primary text-base mt-0.5">check_circle</span>
+              Cuidado de áreas y protección de superficies
+            </li>
+            <li class="flex gap-3">
+              <span class="material-symbols-outlined filled text-primary text-base mt-0.5">check_circle</span>
+              Recomendación de frecuencia de mantenimiento
+            </li>
+          </ul>
+
+          <div class="mt-8 p-5 rounded-2xl bg-primary/5 border border-primary/10">
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Para una cotización exacta, necesitamos conocer metros aproximados, accesos (altura/balcón) y tipo de suciedad.
+            </p>
+          </div>
+
+          <div class="mt-6 flex flex-col gap-3">
+            <a href="index.html#contacto"
+               class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-heading font-bold text-sm editorial-shadow hover:bg-primary-dark transition-colors">
+              <span class="material-symbols-outlined text-lg">send</span>
+              Solicitar cotización
+            </a>
+            <a href="tel:+525512345678"
+               class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-primary rounded-full font-heading font-bold text-sm border border-primary/20 hover:bg-primary/5 transition-colors">
+              <span class="material-symbols-outlined text-lg">phone</span>
+              Llamar ahora
+            </a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="bg-surface-low pt-16 pb-8 border-t border-outline-variant/30">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div>
+      <div class="flex items-center gap-2 mb-5">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" stroke="#005fae" stroke-width="2"/>
+          <path d="M9 19c0-3.866 2.239-7 5-7s5 3.134 5 7" stroke="#005fae" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 12V8M14 8l-2 2M14 8l2 2" stroke="#5ea5ff" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="font-heading font-extrabold text-lg text-on-surface">Pulito</span>
+      </div>
+      <p class="text-sm text-on-surface-variant leading-relaxed">Elevando el estándar de limpieza de cristales con tecnología y profesionalismo.</p>
+    </div>
+    <div>
+      <h4 class="font-heading font-bold text-on-surface text-sm uppercase tracking-widest mb-5">Servicios</h4>
+      <ul class="space-y-3 text-sm text-on-surface-variant">
+        <li><a href="servicios.html#casas" class="hover:text-primary transition-colors">Casas</a></li>
+        <li><a href="servicios.html#apartamentos" class="hover:text-primary transition-colors">Apartamentos</a></li>
+        <li><a href="servicios.html#industrias" class="hover:text-primary transition-colors">Industrias</a></li>
+        <li><a href="servicios.html#comercio" class="hover:text-primary transition-colors">Comercio</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-heading font-bold text-on-surface text-sm uppercase tracking-widest mb-5">Empresa</h4>
+      <ul class="space-y-3 text-sm text-on-surface-variant">
+        <li><a href="index.html#proceso" class="hover:text-primary transition-colors">Cómo funciona</a></li>
+        <li><a href="index.html#testimonios" class="hover:text-primary transition-colors">Testimonios</a></li>
+        <li><a href="index.html#contacto" class="hover:text-primary transition-colors">Contacto</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Aviso de privacidad</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-heading font-bold text-on-surface text-sm uppercase tracking-widest mb-5">Contacto</h4>
+      <ul class="space-y-3 text-sm text-on-surface-variant">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">phone</span> +52 55 1234 5678</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">mail</span> hola@pulito.mx</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">location_on</span> Ciudad de México, MX</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-14 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-sm text-on-surface-variant">© 2024 Pulito. Todos los derechos reservados.</p>
+    <p class="text-xs text-on-surface-variant/60 uppercase tracking-widest font-heading">La Perspectiva Cristalina en Limpieza</p>
+  </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/servicios.js"></script>
+
+</body>
+</html>

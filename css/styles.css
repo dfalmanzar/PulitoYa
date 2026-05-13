@@ -1,0 +1,87 @@
+/* ══════════════ Estilos compartidos Pulito ══════════════ */
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #005fae 0%, #5ea5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.editorial-shadow {
+  box-shadow: 0 20px 40px rgba(0, 95, 174, 0.09);
+}
+
+.section-pad {
+  padding: 6rem 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Mobile menu ── */
+#mobile-menu { display: none; }
+#mobile-menu.open { display: flex; }
+
+/* ── Before/After slider (index) ── */
+#ba-slider { position: relative; user-select: none; }
+#ba-slider .ba-after { position: absolute; inset: 0; overflow: hidden; }
+#ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #fff;
+  cursor: ew-resize;
+  z-index: 10;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ba-handle .knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid #005fae;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 95, 174, 0.18);
+}
+
+/* ── Tabs (servicios) ── */
+.tab-btn[aria-selected="true"] {
+  background: #005fae;
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 20px 40px rgba(0, 95, 174, 0.12);
+}
+
+@media (max-width: 767px) {
+  .section-pad { padding: 4rem 1.25rem; }
+}
