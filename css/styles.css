@@ -82,6 +82,68 @@ html {
   box-shadow: 0 20px 40px rgba(0, 95, 174, 0.12);
 }
 
+/* ── Testimonials carousel ── */
+.testimonials-track {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.testimonials-track.fade-out {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.testimonials-track.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── WhatsApp floating button ── */
+#whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50px;
+  padding: 14px 20px 14px 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.40);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, padding 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#whatsapp-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 32px rgba(37, 211, 102, 0.50);
+}
+#whatsapp-btn svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+#whatsapp-btn .wsp-label {
+  max-width: 160px;
+  transition: max-width 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes wsp-pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.40); }
+  50% { box-shadow: 0 6px 32px rgba(37,211,102,0.70); }
+}
+#whatsapp-btn {
+  animation: wsp-pulse 2.5s ease-in-out infinite;
+}
+#whatsapp-btn:hover {
+  animation: none;
+}
+
 @media (max-width: 767px) {
   .section-pad { padding: 4rem 1.25rem; }
+  #whatsapp-btn .wsp-label { display: none; }
+  #whatsapp-btn { padding: 14px; border-radius: 50%; }
 }
