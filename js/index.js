@@ -15,7 +15,7 @@
     pct = Math.min(1, Math.max(0, pct));
     const pcStr = (pct * 100).toFixed(1) + '%';
     handle.style.left = pcStr;
-    after.style.clipPath = `inset(0 ${(100 - pct * 100).toFixed(1)}% 0 0)`;
+    after.style.clipPath = `inset(0 0 0 ${(pct * 100).toFixed(1)}%)`;
   }
 
   handle.addEventListener('mousedown', (e) => { dragging = true; e.preventDefault(); });
@@ -64,12 +64,8 @@
     track.innerHTML = slice.map(r => `
       <div class="bg-white rounded-3xl p-8 editorial-shadow border-t-4 border-primary/20 border border-outline-variant/20 flex flex-col justify-between">
         <div>
-          <div class="flex gap-1 text-primary mb-5">
-            <span class="material-symbols-outlined filled text-lg">star</span>
-            <span class="material-symbols-outlined filled text-lg">star</span>
-            <span class="material-symbols-outlined filled text-lg">star</span>
-            <span class="material-symbols-outlined filled text-lg">star</span>
-            <span class="material-symbols-outlined filled text-lg">star</span>
+          <div class="flex gap-1 mb-5" style="color:#F59E0B;font-size:1.2rem;">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <p class="text-on-surface-variant italic leading-relaxed mb-8">"${r.text}"</p>
         </div>
