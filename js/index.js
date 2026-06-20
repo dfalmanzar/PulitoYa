@@ -1,5 +1,75 @@
 /* ══════════════ Lógica específica de index.html ══════════════ */
 
+// ── Hero video carousel
+(function () {
+
+const videoSources = [
+  'vid/hero1.mp4',
+  'vid/hero2.mp4',
+  'vid/hero3.mp4',
+  'vid/hero4.mp4',
+];
+
+  const videoEl = document.getElementById('hero-video');
+  const dotsEl  = document.getElementById('hero-video-dots');
+  if (!videoEl || videoSources.length === 0) return;
+
+  let current = 0;
+  let autoTimer = null;
+  const DURATION = 8000; // ms before advancing to next video
+
+  // Build dots
+  function buildDots() {
+    if (!dotsEl) return;
+    dotsEl.innerHTML = videoSources.map((_, i) => `
+      <button class="vdot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Video ${i + 1}"></button>
+    `).join('');
+    dotsEl.querySelectorAll('.vdot').forEach(btn => {
+      btn.addEventListener('click', () => goTo(parseInt(btn.dataset.index)));
+    });
+  }
+
+  function updateDots(idx) {
+    if (!dotsEl) return;
+    dotsEl.querySelectorAll('.vdot').forEach((btn, i) => {
+      btn.classList.toggle('active', i === idx);
+    });
+  }
+
+  function loadVideo(idx) {
+    videoEl.style.opacity = '0';
+    videoEl.style.transition = 'opacity 0.6s ease';
+
+    setTimeout(() => {
+      videoEl.src = videoSources[idx];
+      videoEl.load();
+      videoEl.play().catch(() => {}); // autoplay may be blocked; silent fail
+      videoEl.style.opacity = '1';
+      updateDots(idx);
+    }, 400);
+  }
+
+  function goTo(idx) {
+    clearTimeout(autoTimer);
+    current = (idx + videoSources.length) % videoSources.length;
+    loadVideo(current);
+    scheduleNext();
+  }
+
+  function scheduleNext() {
+    if (videoSources.length <= 1) return;
+    autoTimer = setTimeout(() => goTo(current + 1), DURATION);
+  }
+
+  buildDots();
+  loadVideo(0);
+  scheduleNext();
+
+  // Also advance on video 'ended' (in case duration < DURATION)
+  videoEl.addEventListener('ended', () => goTo(current + 1));
+})();
+
+
 // ── Before/After slider
 (function () {
   const slider = document.getElementById('ba-slider');
@@ -28,6 +98,7 @@
   window.addEventListener('touchmove', (e) => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
   window.addEventListener('touchend', () => { dragging = false; });
 })();
+
 
 // ── Testimonials carousel
 (function () {
