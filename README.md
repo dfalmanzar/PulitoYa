@@ -52,4 +52,4 @@ No requiere instalación. Basta con abrir `index.html` directamente en el navega
 ## Notas
 
 - El sitio es completamente estático: no tiene backend, base de datos ni formularios que envíen datos a un servidor.
-- Los videos e imágenes deben colocarse directamente en la carpeta `img/`; no se recomienda enlazar archivos alojados en Google Drive (puede fallar la reproducción).
+- Los videos e imágenes deben colocarse directamente en la carpeta `img/` y `vid/` respectivamente; no se recomienda enlazar archivos alojados en Google Drive (puede fallar la reproducción).

@@ -192,3 +192,20 @@ html {
   justify-content: center;
   gap: 2px;
 }
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@media (max-width: 768px){
+
+.hero-video-section{
+    justify-content:center;
+}
+
+.hero-video-section .space-y-8{
+    margin-top:0;
+}
+
+}
