@@ -3,15 +3,15 @@
 // ── Hero video carousel
 (function () {
 
-const videoSources = [
-  'vid/hero1.mp4',
-  'vid/hero2.mp4',
-  'vid/hero3.mp4',
-  'vid/hero4.mp4',
-];
+  const videoSources = [
+    'vid/hero1.mp4',
+    'vid/hero2.mp4',
+    'vid/hero3.mp4',
+    'vid/hero4.mp4',
+  ];
 
   const videoEl = document.getElementById('hero-video');
-  const dotsEl  = document.getElementById('hero-video-dots');
+  const dotsEl = document.getElementById('hero-video-dots');
   if (!videoEl || videoSources.length === 0) return;
 
   let current = 0;
@@ -43,7 +43,7 @@ const videoSources = [
     setTimeout(() => {
       videoEl.src = videoSources[idx];
       videoEl.load();
-      videoEl.play().catch(() => {}); // autoplay may be blocked; silent fail
+      videoEl.play().catch(() => { }); // autoplay may be blocked; silent fail
       videoEl.style.opacity = '1';
       updateDots(idx);
     }, 400);
@@ -154,7 +154,7 @@ const videoSources = [
   function renderDots(page) {
     if (!dotsContainer) return;
     dotsContainer.innerHTML = Array.from({ length: totalPages }, (_, i) => `
-      <button class="w-2 h-2 rounded-full transition-all duration-300 ${i === page ? 'bg-primary w-6' : 'bg-outline-variant'}" data-page="${i}" aria-label="Página ${i+1}"></button>
+      <button class="w-2 h-2 rounded-full transition-all duration-300 ${i === page ? 'bg-primary w-6' : 'bg-outline-variant'}" data-page="${i}" aria-label="Página ${i + 1}"></button>
     `).join('');
     dotsContainer.querySelectorAll('button').forEach(btn => {
       btn.addEventListener('click', () => goTo(parseInt(btn.dataset.page)));
